@@ -37,27 +37,6 @@ app.get("/drby", (req, res)=>{
     })
 });
 
-//get one blog
-app.get("/drby/:id", (req, res)=>{
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    const sql = `
-    SELECT
-    drby.id,
-    drby.title,
-    drby.body,
-    DATE_FORMAT(drby.posted_date, '%d/%m/%Y %H:%i') AS posted_date,
-    comments.id AS comment_id,
-    comments.body AS comment_body,
-    DATE_FORMAT(comments.posted_date, '%d/%m/%Y %H:%i') AS comment_dates
-    FROM drby
-    LEFT JOIN comments ON drby.id = comments.blog_id
-    WHERE drby.id = ?;`
-    db.query(sql,[req.params.id], (err, result)=>{
-        if(err) throw err;
-        res.send(result)
-    })
-})
 
 //add a blog post
 app.post("/drby", (req, res)=>{
