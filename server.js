@@ -4,14 +4,14 @@ require('dotenv').config();
 const app = express()
 const cors = require("cors")
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: "bgvqojweb2qinrqzgchr-mysql.services.clever-cloud.com",
     user: "u7p2yoidmtbhyp1i",
     password: process.env.PASSWORD,
     database: "bgvqojweb2qinrqzgchr"
 })
 
-db.connect()
+// db.connect()
 
 //middleware
 app.use(cors());
