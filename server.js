@@ -31,7 +31,7 @@ app.get("/drby", (req, res)=>{
     FROM drby;`
     db.query(sql, (err, result)=>{
         if(err) throw err;
-        res.send(result)
+        res.send(result);
     })
 });
 
