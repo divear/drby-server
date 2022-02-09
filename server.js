@@ -26,9 +26,7 @@ app.get("/drby", (req, res)=>{
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     const sql = `
     SELECT 
-    id,
-    username,
-    body, 
+    *,
     DATE_FORMAT(datum, '%d/%m/%Y %H:%i') AS posted_date
     FROM drby;`
     db.query(sql, (err, result)=>{
