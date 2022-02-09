@@ -45,10 +45,10 @@ app.post("/drby", (req, res)=>{
 
     const post = req.body
     const sql = `
-    INSERT INTO drby(username, body) VALUES(?, ?) ;
+    INSERT INTO drby(username, body, datum, genre) VALUES(?, ?, now(), ?) ;
     `
     console.log(post);
-    db.query(sql,[post[1].username, post[0].body], (err, result)=>{
+    db.query(sql,[post[1].username, post[0].body, post[2].genre], (err, result)=>{
         if(err) throw err;
         res.send(result)
     })
