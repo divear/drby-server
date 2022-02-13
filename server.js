@@ -8,7 +8,8 @@ const db = mysql.createPool({
     host: "bgvqojweb2qinrqzgchr-mysql.services.clever-cloud.com",
     user: "u7p2yoidmtbhyp1i",
     password: process.env.PASSWORD,
-    database: "bgvqojweb2qinrqzgchr"
+    database: "bgvqojweb2qinrqzgchr",
+    charset : 'utf8mb4'
 })
 
 // db.connect()

@@ -10,7 +10,7 @@ CREATE TABLE drby(
 )
 
 
-INSERT INTO drby(username, body, datum) VALUES("bob" , "Snědl jsem rohlík" , now());
+INSERT INTO drby(username, body, datum, genre) VALUES("bob" , "🌻d" , now(), 1);
 
 ALTER TABLE drby
 ADD COLUMN genre INT(10);
